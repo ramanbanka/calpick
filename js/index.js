@@ -97,7 +97,7 @@ $(document).ready(function()
 	{
 		
 		var v=this.value;
-		if(v==g)
+		if(v==g && v>=6)
 		{
 			$('#password2_group').addClass("has-success").removeClass("has-error");
 			$('#password2_feedback').addClass("glyphicon-ok").removeClass("glyphicon-remove");
