@@ -101,52 +101,57 @@
 				
 				<form method="post" action="#" id="signup_form" class="form-horizontal" role="form">
 			
-					<div class="form-group">
+					<div id="first_name_group" class="form-group has-feedback">
 						<label class="control-label col-sm-4" for="first_name">First name</label>
 						<div class="col-sm-8">
 							<input type="text" name="first_name" id="first_name" maxlength="32" class="form-control" placeholder="Enter your first name" required="required"/>
+							<span id="first_name_feedback" class="glyphicon form-control-feedback"></span>
 						</div>
 						<div class="help-block"><p id="first_name_feedback" class="text-danger"></p></div>
 					</div>
 					
-					<div class="form-group">
+					<div id="last_name_group" class="form-group has-feedback" >
 						<label class="control-label col-sm-4" for="last_name">Last name</label>
 						<div class="col-sm-8">
 							<input type="text" name="last_name" id="last_name"  class="form-control" placeholder="Enter your last name" required="required"/>
+							<span id="last_name_feedback" class="glyphicon form-control-feedback"></span>
 						</div>
 						<div class="help-block"><p id="last_name_feedback" class="text-danger"></p></div>
 					</div>
 					
-					<div class="form-group has-feedback">
+					<div id="email_group" class="form-group has-feedback">
 						<label class="control-label col-sm-4" for="email">Email</label>
 						<div class="col-sm-8">
 							<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" required="required"/>
-							<span class="glyphicon form-control-feedback"></span>
+							<span id="email_feedback" class="glyphicon form-control-feedback"></span>
 							
 						</div>
 						<div class="help-block"><p id="email_feedback" class="text-danger"></p></div>
 					</div>
 				
-					<div class="form-group">
+					<div id="username_group" class="form-group has-feedback">
 						<label class="control-label col-sm-4" for="username">Username</label>
 						<div class="col-sm-8">
 							<input type="text" name="username" id="username" class="form-control" required="required" placeholder="Choose a username."/>
+							<span id="username_feedback" class="glyphicon form-control-feedback"></span>
 						</div>
 						<div class="help-block"><p id="username_feedback" class="text-danger"></p></div>
 					</div>
 					
-					<div class="form-group">
+					<div id="password1_group" class="form-group has-feedback">
 						<label class="control-label col-sm-4" for="password1">Create Password</label>
 						<div class="col-sm-8">
 							<input type="password" name="password1" id="password1" class="form-control" placeholder="atleast 6 characters long" required="required"/>
+							<span id="password1_feedback" class="glyphicon form-control-feedback"></span>
 						</div>
 						<div class="help-block"><p id="password1_feedback" class="text-danger"></p></div>
 					</div>
 					
-					<div class="form-group">
+					<div id="password2_group" class="form-group has-feedback">
 						<label class="control-label col-sm-4" for="password2">Re enter Password</label>
 						<div class="col-sm-8">
 							<input type="password" name="password2" id="password2" class="form-control" placeholder="the two passwords must match" required="required"/>
+							<span id="password2_feedback" class="glyphicon form-control-feedback"></span>
 						</div>
 						<div class="help-block"><p id="password2_feedback" class="text-danger"></p></div>
 					</div>
