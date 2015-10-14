@@ -62,7 +62,7 @@ $(document).ready(function()
 		var v=this.value;
 		if(v.length>0)
 		{
-			$('#username_group_group').addClass("has-success").removeClass("has-error");
+			$('#username_group').addClass("has-success").removeClass("has-error");
 			$('#username_feedback').addClass("glyphicon-ok").removeClass("glyphicon-remove");
 		}
 		else
@@ -97,7 +97,7 @@ $(document).ready(function()
 	{
 		
 		var v=this.value;
-		if(v==g)
+		if(v==g && v>=6)
 		{
 			$('#password2_group').addClass("has-success").removeClass("has-error");
 			$('#password2_feedback').addClass("glyphicon-ok").removeClass("glyphicon-remove");
