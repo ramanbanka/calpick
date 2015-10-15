@@ -44,14 +44,27 @@ $(document).ready(function()
 		var v=this.value;
 		if(v.length>0)
 		{
-			$('#email_group').addClass("has-success").removeClass("has-error");
-			$('#email_feedback').addClass("glyphicon-ok").removeClass("glyphicon-remove");
+			$.post('php/check_email.php',{ email : v },function(data){
+				if(data == "true")
+				{
+						$('#email_group').removeClass('has-error').addClass('has-success');
+						$('#email_feedback').removeClass('glyphicon-remove').addClass('glyphicon-ok');
+					}
+					else
+					{
+						$('#email_group').removeClass('has-success').addClass('has-error');
+						$('#email_feedback').removeClass('glyphicon-ok').addClass('glyphicon-remove');
+					}
+			}).error(function(){
+					alert("An error occurred. Unable to validate email");
+				});
 		}
 		else
 		{
 			$('#email_group').removeClass("has-success").addClass("has-error");
 			$('#email_feedback').removeClass("glyphicon-ok").addClass("glyphicon-remove");
 		}
+		
 	});
 	
 	
@@ -59,20 +72,41 @@ $(document).ready(function()
 	$('#username').blur(function()
 	{
 		
-		var v=this.value;
-		if(v.length>0)
-		{
-			$('#username_group').addClass("has-success").removeClass("has-error");
-			$('#username_feedback').addClass("glyphicon-ok").removeClass("glyphicon-remove");
-		}
-		else
-		{
-			$('#username_group').removeClass("has-success").addClass("has-error");
-			$('#username_feedback').removeClass("glyphicon-ok").addClass("glyphicon-remove");
-		}
+			var v=this.value;
+			if(v == "")
+			{
+				$('#username_group').removeClass("has-success").addClass("has-error");
+				$('#username_feedback').removeClass("glyphicon-ok").addClass("glyphicon-remove");
+			}
+			else if(username.length < 4)
+			{
+				$('#username_group').removeClass("has-success").addClass("has-error");
+				$('#username_feedback').removeClass("glyphicon-ok").addClass("glyphicon-remove");
+			}
+			else
+			{
+				$.post('php/check_username_avail.php',{ username : v },function(data){
+					
+						if(data == "false")
+						{
+							$('#username_group').removeClass("has-success").addClass("has-error");
+							$('#username_feedback').removeClass("glyphicon-ok").addClass("glyphicon-remove");
+						}
+						else if(data == "true")
+						{
+							$('#username_group').addClass("has-success").removeClass("has-error");
+							$('#username_feedback').addClass("glyphicon-ok").removeClass("glyphicon-remove");
+						}
+						else
+						{
+							$('#username_group').removeClass("has-success").addClass("has-error");
+							$('#username_feedback').removeClass("glyphicon-ok").addClass("glyphicon-remove");
+						}
+					}).error(function(){
+						alert("An error occurred. Unable to validate username");
+					});
+			}
 	});
-	
-	
 	
 	$('#password1').blur(function()
 	{
@@ -95,9 +129,8 @@ $(document).ready(function()
 	
 	$('#password2').blur(function()
 	{
-		
 		var v=this.value;
-		if(v==g && v>=6)
+		if(v==g && v.length>=6)
 		{
 			$('#password2_group').addClass("has-success").removeClass("has-error");
 			$('#password2_feedback').addClass("glyphicon-ok").removeClass("glyphicon-remove");

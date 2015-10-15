@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 
+<?php
+
+	//starting the session
+	session_start();
+
+	//check if the user is already logged in
+	//if session is not already set try to set it using cookies
+	if(!isset($_SESSION['user_id']))
+	{
+		
+		if(isset($_COOKIE['user_id']) && isset($_COOKIE['username']))
+		{
+			$_SESSION['user_id']=$_COOKIE['user_id'];
+			$_SESSION['username']=$_COOKIE['username'];
+		}
+	}
+	
+	//If now session is set, redirect the user to his home page
+	if(isset($_SESSION['user_id']))
+	{
+		$userhome_url='home.php';
+		header('Location: ' . $userhome_url);
+	}
+?>
+
 <html lang="en">
 <head>
 
@@ -206,7 +231,7 @@
 						<input id="login_password" type="password" name="login_password" class="form-control" placeholder="Enter Password"/>
 					</div>
 					<div class="checkbox">
-						<label><input type="checkbox"/> Remember me</label>
+						<label><input type="checkbox" value="yes" checked="none"/> Remember me</label>
 					</div>
 					
 					<button id="login_submit" type="submit" class="btn btn-primary">Log In</button>
