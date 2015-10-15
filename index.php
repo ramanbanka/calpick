@@ -116,6 +116,7 @@
 				<p id="advert1"> Now never miss a deadline with calpick.</p>
 				<p id="advert2"> Time for a completely new social experience.</p>
 				<br/><br/><br/><br/><br/><br/><br/>
+				
 			</div>
 			
 			<!--Main right-->

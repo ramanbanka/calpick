@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <!--------------------------------STYLE INCLUDES----------------------------->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style type="text/css">
+    #add_event_modal_trigger
+	{
+		margin-top:20px;
+	}
+	
+	/*
+	input[type="radio"]
+	{
+		  -webkit-appearance: checkbox; 
+		  -moz-appearance: checkbox;    
+		  -ms-appearance: checkbox;
+	}*/
+  </style>
+  <!--------------------------------------------------------------------------->
+
+</head>
+
+<body>
+
+<div id="tmp-body" class="container">
+    <button id="add_event_modal_trigger" class="btn btn-primary " data-toggle="modal" data-target="#add_event_modal">Add Event</button>
+</div>
+
+
+	
+<!------------------------------OVERLAY ITEMS------------------------------------->
+
+<!-------------Add Event modal------------->
+<div id="add_event_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			
+			<div class="modal-body">
+			
+				<button type="button" class="close" data-dismiss="modal" >&times;</button>
+				
+				<h4>Enter The Event Details: </h4>
+				
+				<form class="form-horizontal" role="form">
+				
+					<div class="form-group">
+					    <label class="control-label col-lg-3" for="event_name"> Event Name:</label>
+						<div class="col-lg-6">
+                            <input id="event_name "type="text" name="event_name" class="form-control" placeholder="Enter the event name">
+                        </div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-lg-3" for="event_description"> Description: </label>
+						<div class="col-lg-6">
+						    <textarea name="description" class="form-control" palceholder="enter the description of the event"></textarea>
+						</div>
+					</div>
+					
+					
+					<div class="form-group">
+					    <label class="control-label col-lg-3" for="start_time"> Start Time:</label>
+						<div class="col-lg-6">
+                            <input id="start_time "type="time" name="start_time" class="form-control" placeholder="Enter the start time">
+                        </div>
+					</div>
+					
+					<div class="form-group">
+					    <label class="control-label col-lg-3" for="event_duration"> Duration:</label>
+						<div class="col-lg-6">
+                            <input id="event_duration "type="text" name="event_duration" class="form-control" placeholder="Enter the duration">
+                        </div>
+					</div>
+					
+					
+					
+					<div class="form-group">
+					    <label class="control-label col-lg-3" for="event_color">Event Color:</label>
+						<div class="col-lg-6">
+                            <label class="radio-inline"><input type="radio" name="event_color" value="yellow" style="color:yellow"></label>
+                            <label class="radio-inline"><input type="radio" name="event_color" value="green" style="background-color:green"></label>
+                            <label class="radio-inline"><input type="radio" name="event_color" value="aqua" style="background-color:aqua"></label>
+                            <label class="radio-inline"><input type="radio" name="event_color" value="red" style="background-color:red"></label>
+                            <label class="radio-inline"><input type="radio" name="event_color" value="blue" style="background-color:blue"></label>
+                        </div>
+					</div>
+					
+					
+					
+					<div class="form-group">
+					    <label class="control-label col-lg-3" for="event_palce"> Place:</label>
+						<div class="col-lg-6">
+                            <input id="event_place "type="text" name="event_place" class="form-control" placeholder="Enter the palce of event">
+                        </div>
+					</div>
+					
+					
+					
+					<div class="form-group">
+					    <label class="control-label col-lg-3" for="event_status"> Status:</label>
+						<div class="col-lg-6">
+							<label class="radio-inline"><input type="radio" name="event_status" value="free">Free</label>
+							<label class="radio-inline"><input type="radio" name="event_status" value="busy">Busy</label>
+                        </div>
+					</div>
+					
+					
+					<div class="form-group">
+					    <label class="control-label col-lg-3" for="event_status"> Priority:</label>
+						<div class="col-lg-6">
+							<label class="radio-inline"><input type="radio" name="event_priority" value="low">Low</label>
+							<label class="radio-inline"><input type="radio" name="event_priority" value="medium">Medium</label>
+							<label class="radio-inline"><input type="radio" name="event_priority" value="high">High</label>
+                        </div>
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<button id="add_event_submit" type="submit" class="btn btn-primary">Submit</button>
+					<div class="help-block"><p class="text-danger"></p></div>
+					
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</div>	
+
+	
+
+<!-----------------------------SCRIPT INCLUDES------------------------------->
+ 
+  <!--Include bootstrap and jquery-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <!--Include my javascript-->
+  <script src="js/index.js"></script>
+<!--------------------------------------------------------------------------->
+
+</body>
+
+</html>
+
