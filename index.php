@@ -29,7 +29,6 @@
 <head>
 
   <title>Calpick</title>
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -54,7 +53,7 @@
 		width:90px;
 		font-size:15px;
 		background-color:transparent;
-		border-color:#777
+		border-color:#777;
 	}
 	
 	#login_submit,#signup_submit
@@ -125,7 +124,9 @@
 				<h2 align="center">Join now</h2>
 				<p align="center">It is free, easy and takes only a minute.</p>
 				
-				<form method="post" action="#" id="signup_form" class="form-horizontal" role="form">
+				
+				<!--Signup form-->
+				<form method="post" action="#" id="signup_form" class="form-horizontal" role="form" novalidate="novalidate">
 			
 					<div id="first_name_group" class="form-group has-feedback">
 						<label class="control-label col-sm-4" for="first_name">First name</label>
@@ -188,10 +189,10 @@
 					<div class="col-sm-8">
 						<button id="signup_submit" name="signup_submit" type="submit" class="btn btn-primary">Submit</button>
 					</div>
-					<div class="help-block"><p id="signup_submit_feedback" class="text-danger"></p></div>
-			</form>
+					<div class="help-block" id="signup_submit_feedback"></div>
+				</form><!--Signup form ends-->
 			
-			</div>
+			</div><!--Main Right ends-->
 		</div>
 	</div><!--Main inner ends-->
 </div><!--main outer ends>
@@ -222,7 +223,7 @@
 				
 				<h4>Enter your login credentials: </h4>
 				
-				<form role="form">
+				<form method="post" action="#" id="login_form" role="form">
 					<div class="form-group">
 						<label for="login_username"> Username </label>
 						<input id="login_username" type="text" name="login_username" class="form-control" placeholder="Enter Username"/>
@@ -232,11 +233,11 @@
 						<input id="login_password" type="password" name="login_password" class="form-control" placeholder="Enter Password"/>
 					</div>
 					<div class="checkbox">
-						<label><input type="checkbox" value="yes" checked="none"/> Remember me</label>
+						<label><input type="checkbox" name="remember_me" id="remember_me" value="yes" checked="checked"/> Remember me</label>
 					</div>
 					
 					<button id="login_submit" type="submit" class="btn btn-primary">Log In</button>
-					<div class="help-block"><p class="text-danger"></p></div>
+					<div id="login_submit_feedback" class="help-block"></div>
 					<a href="#"> Forgot password? </a>
 				</form>
 			</div>

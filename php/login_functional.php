@@ -6,15 +6,15 @@
 	//session_start();
 
 	//check if the form has been submitted
-	if(isset($_POST['submit']))
+	if(isset($_POST['login_username'], $_POST['login_password']))
 	{
 		//Connect to the database
 		$dbc=mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME)											
 			 or die("Error connecting to the database.");
 			 
 		//Fetch the entered info in the form
-		$username= test_input($dbc,$_POST['username']); 
-		$password= test_input($dbc,$_POST['password']);
+		$username= test_input($dbc,$_POST['login_username']); 
+		$password= test_input($dbc,$_POST['login_password']);
 		
 		
 		if(!empty($username) && !empty($password))
@@ -37,13 +37,17 @@
 				//Set the cookies
 				if(isset($_POST['remember_me']) && $_POST['remember_me']=="yes")
 				{
-					setcookie('user_id',$row['user_id'],time() + 60*60*24*30);	//Expires in 30 days
-					setcookie('username',$row['username'],time() + 60*60*24*30);	//Expires in 30 days
+					setcookie('user_id',$row['user_id'],time() + 60*60*24*30,'/');	//Expires in 30 days
+					setcookie('username',$row['username'],time() + 60*60*24*30,'/');	//Expires in 30 days
 				}
 				
+				
+				echo "successful";
+				/*
 				//Redirect the user to their home page
 				$userhome_url = "userhome.php";
 				header("Location:" . $userhome_url);
+				*/
 			}
 			else
 			{
